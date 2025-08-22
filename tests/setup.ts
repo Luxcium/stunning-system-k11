@@ -61,4 +61,4 @@ expect.extend({
 
 // Test environment setup
 process.env['NODE_ENV'] = 'test';
-process.env['PORT'] = '0'; // Use random port for tests
+process.env['PORT'] = '0'; // Request random port for tests (if supported by server)
