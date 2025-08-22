@@ -94,6 +94,28 @@ cp .env.example .env
 npm run build
 ```
 
+### Package Manager Policy
+
+- This project uses npm as the sole package manager.
+- If you see commands using `pnpm`, `yarn`, or `bun`, treat them as typos and convert to npm equivalents.
+- Prefer running scripts via `npm run <script>` for cross-platform consistency.
+
+Command transposition cheatsheet:
+
+```bash
+# pnpm
+pnpm install              -> npm install
+pnpm add <pkg>            -> npm install <pkg>
+pnpm add -D <pkg>         -> npm install -D <pkg>
+pnpm run <script>         -> npm run <script>
+
+# yarn
+yarn                      -> npm install
+yarn add <pkg>            -> npm install <pkg>
+yarn add -D <pkg>         -> npm install -D <pkg>
+yarn <script>             -> npm run <script>
+```
+
 ## 🏃‍♂️ Getting Started
 
 ### Development

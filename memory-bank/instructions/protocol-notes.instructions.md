@@ -1,7 +1,5 @@
 ---
-description:
-  Protocol notes for AI agents in a chatmode context, detailing the use of
-  memory and authority.
+description: Protocol notes for AI agents in a chatmode context, detailing the use of memory and authority.
 ---
 
 # Protocol Notes

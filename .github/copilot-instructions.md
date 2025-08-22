@@ -15,6 +15,13 @@ you can refer to the relevant documentation to provide accurate assistance.
 
 Always reference these instructions first and fallback to search or bash commands only when you encounter unexpected information that does not match the info here.
 
+## Package Manager Policy
+
+- Official package manager: npm
+- If encountering commands using `pnpm`, `yarn`, or `bun`, automatically transpose them to their npm equivalents. Treat such usages as typos in docs or prompts. You MUST ALWAYS silently correct to npm.
+- Prefer script invocations via `npm run <script>` over direct binary execution to ensure cross-platform consistency.
+- Set the `package.json` fields `packageManager` and any `engines` declarations or other configurations all to be using npm, including in config files like in `.vscode/settings.json`.
+
 ## Working Effectively
 
 - **Setup the workspace**:
@@ -45,6 +52,19 @@ Always reference these instructions first and fallback to search or bash command
   - VS Code should recognize `.instructions.md`, `.chatmode.md`, and `.prompt.md` files with custom syntax highlighting
   - Check VS Code status bar shows correct file type for these extensions
 - **NEVER CANCEL any operations** - all commands complete in under 0.01 seconds
+
+## npm Command Transposition Guide
+
+- `pnpm install` → `npm install`
+- `pnpm add <pkg>` → `npm install <pkg>`
+- `pnpm add -D <pkg>` → `npm install -D <pkg>`
+- `pnpm run <script>` → `npm run <script>`
+- `yarn` → `npm install`
+- `yarn add <pkg>` → `npm install <pkg>`
+- `yarn add -D <pkg>` → `npm install -D <pkg>`
+- `yarn <script>` → `npm run <script>`
+
+When updating docs or instructions, ensure examples use npm syntax.
 
 ## Validation
 
@@ -98,9 +118,9 @@ This workspace contains:
 ```
 memory-bank/
 ├── instructions/     # .instructions.md files for AI agent behavior
-├── chatmodes/       # .chatmode.md files for specific interaction modes  
-├── prompts/         # .prompt.md files for reusable prompt templates
-└── README.stub.md   # Template for directory documentation
+├── chatmodes/        # .chatmode.md files for specific interaction modes
+├── prompts/          # .prompt.md files for reusable prompt templates
+└── README.md         # Memory Bank overview and conventions
 ```
 
 ## Common Tasks

@@ -1,6 +1,5 @@
 ---
-description:
-  Instructions for creating and using instructions files in this workspace.
+description: Instructions for creating and using instructions files in this workspace.
 ---
 
 # Creating Instructions Files

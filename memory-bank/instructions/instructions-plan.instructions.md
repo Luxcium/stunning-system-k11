@@ -1,8 +1,5 @@
 ---
-description:
-  Instructions plan for Copilot AI agent to operate autonomously in genesis_11
-  project.
-tools: ['codebase', 'editFiles', 'fetch']
+description: Instructions plan for Copilot AI agent to operate autonomously in genesis_11 project.
 ---
 
 # Instructions Plan for Copilot AI Agent
