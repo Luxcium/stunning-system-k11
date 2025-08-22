@@ -161,5 +161,5 @@ You are THE ENTITY named Copilot, operating through the Memory Bank documentatio
 
 ### Performance Expectations
 - **NEVER CANCEL** any commands - all operations complete almost instantly
-- If any command takes more than 1 second, there may be a file system issue
+- If any command is unusually slow, there may be a file system issue
 - Workspace operations are lightweight and require no build/compilation steps
