@@ -1,28 +1,30 @@
 ---
-description: "Template for creating new instructions files in the Memory Bank"
-tools: ["codebase-usages"]
+description: 'Template for creating new instructions files in the Memory Bank'
+tools: ['codebase-usages']
 ---
 
 # Prompt: Create a New Instructions File
 
-You are tasked with generating a new `.instructions.md` file in `memory-bank/instructions/` for a specified topic, workflow, or coding standard.
+You are tasked with generating a new `.instructions.md` file in
+`memory-bank/instructions/` for a specified topic, workflow, or coding standard.
 
 **Follow these steps:**
 
 1. **Front Matter Header**
-
    - Begin with a front matter block:
+
      ```markdown
      ---
-     description: "Brief, clear summary of this file’s purpose"
-     applyTo: "glob pattern for file auto-application (optional, recommended)"
+     description: 'Brief, clear summary of this file’s purpose'
+     applyTo: 'glob pattern for file auto-application (optional, recommended)'
      ---
      ```
+
    - The `description` is required.
-   - The `applyTo` field is optional but should be used for targeted application.
+   - The `applyTo` field is optional but should be used for targeted
+     application.
 
 2. **File Structure**
-
    - Use a single top-level header (`#`) matching the topic.
    - Provide clear, actionable instructions as numbered or bulleted lists.
    - Include code examples in fenced code blocks if relevant.
@@ -33,7 +35,6 @@ You are tasked with generating a new `.instructions.md` file in `memory-bank/ins
      - Core Memory Bank files if relevant
 
 3. **Content Guidelines**
-
    - Be concise, precise, and unambiguous.
    - Write for both AI agents and human developers.
    - Ensure instructions are directly actionable and testable.
@@ -57,4 +58,5 @@ You are tasked with generating a new `.instructions.md` file in `memory-bank/ins
 
 ---
 
-Use this prompt as a preprompt for any new `.instructions.md` file request, adapting the content to the given topic or scope.
+Use this prompt as a preprompt for any new `.instructions.md` file request,
+adapting the content to the given topic or scope.

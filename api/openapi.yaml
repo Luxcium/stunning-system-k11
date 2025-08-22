@@ -1,0 +1,403 @@
+openapi: 3.0.0
+info:
+  title: Stunning System K11 API
+  version: 1.0.0
+  description: |
+    Modern TypeScript/Node.js API with institutional-grade practices and validation.
+
+    This API demonstrates:
+    - Strict TypeScript typing
+    - Comprehensive validation
+    - Modern error handling
+    - OpenAPI documentation
+    - Best security practices
+  contact:
+    name: API Support
+    email: support@example.com
+  license:
+    name: ISC
+    url: https://opensource.org/licenses/ISC
+
+servers:
+  - url: https://api.stunning-system-k11.com
+    description: Production server
+  - url: https://staging-api.stunning-system-k11.com
+    description: Staging server
+
+security: []
+
+paths:
+  /health:
+    get:
+      summary: Health check endpoint
+      description: Returns the health status of the application
+      operationId: getHealth
+      tags:
+        - Health
+      responses:
+        '200':
+          description: Application is healthy
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: 'healthy'
+                  timestamp:
+                    type: string
+                    format: date-time
+                  uptime:
+                    type: number
+                    description: Uptime in seconds
+                  environment:
+                    type: string
+                    example: 'development'
+        '500':
+          description: Internal server error
+
+  /api/users:
+    get:
+      summary: Get all active users
+      description: Retrieves a list of all active users
+      operationId: getActiveUsers
+      tags:
+        - Users
+      responses:
+        '200':
+          description: List of active users
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/UserProfile'
+        '500':
+          description: Internal server error
+
+    post:
+      summary: Create a new user
+      description: Creates a new user profile with the provided data
+      operationId: createUser
+      tags:
+        - Users
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateUserRequest'
+            examples:
+              example_user:
+                summary: Example user creation
+                value:
+                  email: 'john.doe@example.com'
+                  name: 'John Doe'
+                  isActive: true
+                  preferences:
+                    theme: 'light'
+                    language: 'en'
+                    notifications:
+                      email: true
+                      push: false
+                      sms: false
+      responses:
+        '201':
+          description: User created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserProfile'
+        '400':
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationError'
+              examples:
+                invalid_email:
+                  summary: Invalid email format
+                  value:
+                    error: 'Invalid email format'
+                    code: 'VALIDATION_ERROR'
+                    field: 'email'
+                missing_name:
+                  summary: Missing name
+                  value:
+                    error: 'Name is required'
+                    code: 'VALIDATION_ERROR'
+                    field: 'name'
+
+  /api/users/{id}:
+    get:
+      summary: Get user by ID
+      description: Retrieves a user profile by their unique identifier
+      operationId: getUserById
+      tags:
+        - Users
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+          description: User ID
+          example: 'user_1640995200000_abc123def'
+      responses:
+        '200':
+          description: User found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserProfile'
+        '404':
+          description: User not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundError'
+              examples:
+                user_not_found:
+                  summary: User not found
+                  value:
+                    error: "User with identifier 'invalid_id' not found"
+                    code: 'NOT_FOUND'
+
+  /api/users/{id}/preferences:
+    patch:
+      summary: Update user preferences
+      description: Updates the preferences for a specific user
+      operationId: updateUserPreferences
+      tags:
+        - Users
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+          description: User ID
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdatePreferencesRequest'
+            examples:
+              theme_update:
+                summary: Update theme preference
+                value:
+                  theme: 'dark'
+              notification_update:
+                summary: Update notifications
+                value:
+                  notifications:
+                    email: false
+                    push: true
+                    sms: false
+      responses:
+        '200':
+          description: Preferences updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserProfile'
+        '404':
+          description: User not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundError'
+
+components:
+  schemas:
+    UserProfile:
+      type: object
+      required:
+        - id
+        - email
+        - name
+        - createdAt
+        - isActive
+        - preferences
+      properties:
+        id:
+          type: string
+          description: Unique user identifier
+          example: 'user_1640995200000_abc123def'
+        email:
+          type: string
+          format: email
+          description: User email address
+          example: 'john.doe@example.com'
+        name:
+          type: string
+          description: User full name
+          example: 'John Doe'
+        createdAt:
+          type: string
+          format: date-time
+          description: Account creation date
+          example: '2023-01-01T12:00:00.000Z'
+        isActive:
+          type: boolean
+          description: User account status
+          example: true
+        preferences:
+          $ref: '#/components/schemas/UserPreferences'
+
+    CreateUserRequest:
+      type: object
+      required:
+        - email
+        - name
+        - isActive
+        - preferences
+      properties:
+        email:
+          type: string
+          format: email
+          description: User email address
+          example: 'john.doe@example.com'
+        name:
+          type: string
+          minLength: 1
+          description: User full name
+          example: 'John Doe'
+        isActive:
+          type: boolean
+          description: User account status
+          example: true
+        preferences:
+          $ref: '#/components/schemas/UserPreferences'
+
+    UpdatePreferencesRequest:
+      type: object
+      properties:
+        theme:
+          type: string
+          enum: ['light', 'dark', 'auto']
+          description: UI theme preference
+        language:
+          type: string
+          description: User preferred language code
+          example: 'en'
+        notifications:
+          $ref: '#/components/schemas/NotificationSettings'
+
+    UserPreferences:
+      type: object
+      required:
+        - theme
+        - language
+        - notifications
+      properties:
+        theme:
+          type: string
+          enum: ['light', 'dark', 'auto']
+          description: UI theme preference
+          example: 'light'
+        language:
+          type: string
+          description: User preferred language code
+          example: 'en'
+        notifications:
+          $ref: '#/components/schemas/NotificationSettings'
+
+    NotificationSettings:
+      type: object
+      required:
+        - email
+        - push
+        - sms
+      properties:
+        email:
+          type: boolean
+          description: Email notifications enabled
+          example: true
+        push:
+          type: boolean
+          description: Push notifications enabled
+          example: false
+        sms:
+          type: boolean
+          description: SMS notifications enabled
+          example: false
+
+    ValidationError:
+      type: object
+      required:
+        - error
+        - code
+      properties:
+        error:
+          type: string
+          description: Error message
+          example: 'Invalid email format'
+        code:
+          type: string
+          description: Error code
+          example: 'VALIDATION_ERROR'
+        field:
+          type: string
+          description: Field that caused the error
+          example: 'email'
+
+    NotFoundError:
+      type: object
+      required:
+        - error
+        - code
+      properties:
+        error:
+          type: string
+          description: Error message
+          example: "User with identifier 'invalid_id' not found"
+        code:
+          type: string
+          description: Error code
+          example: 'NOT_FOUND'
+
+    InternalError:
+      type: object
+      required:
+        - error
+        - code
+      properties:
+        error:
+          type: string
+          description: Error message
+          example: 'Internal Server Error'
+        code:
+          type: string
+          description: Error code
+          example: 'INTERNAL_ERROR'
+
+  responses:
+    BadRequest:
+      description: Bad request - validation error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ValidationError'
+
+    NotFound:
+      description: Resource not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/NotFoundError'
+
+    InternalServerError:
+      description: Internal server error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/InternalError'
+
+tags:
+  - name: Health
+    description: Application health and monitoring endpoints
+  - name: Users
+    description: User management operations
