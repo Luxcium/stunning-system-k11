@@ -1,0 +1,2401 @@
+{
+  // #region FORMAT BEHAVIOUR                                        !
+  /*
+  |-···----------------------------------------------------------···-|
+  */
+  "files.associations": {
+    "*.py": "python",
+    "requirements*.txt": "pip-requirements",
+    ".env*": "dotenv",
+    "*.ts": "typescript",
+    "*.js": "javascript",
+    "*.json": "jsonc",
+    "Dockerfile*": "dockerfile",
+    "docker-compose*.yml": "dockercompose",
+    "*.md": "markdown",
+    "**/.github/chatmodes/*.chatmode.md": "chatmode",
+    "**/memory-bank/chatmodes/*.chatmode.md": "chatmode",
+    "**/memory-bank/instructions/*.instructions.md": "instructions",
+    "**/memory-bank/prompts/*.prompt.md": "prompt"
+  },
+  "[chatmode]": {
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "editor.unicodeHighlight.invisibleCharacters": false,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": {
+      "comments": "off",
+      "strings": "off",
+      "other": "off"
+    }
+  },
+  "[prompt]": {
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "editor.unicodeHighlight.invisibleCharacters": false,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": {
+      "comments": "off",
+      "strings": "off",
+      "other": "off"
+    }
+  },
+  "[instructions]": {
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "editor.unicodeHighlight.invisibleCharacters": false,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.wordWrap": "on",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.quickSuggestions": {
+      "comments": "off",
+      "strings": "off",
+      "other": "off"
+    }
+  },
+  // "chat.editing.autoAcceptDelay": 20,
+  "code-runner.executorMap": {
+    "javascript": "node --trace-deprecation",
+    "typescript": "ts-node"
+  },
+  "containers.containerClient": "com.microsoft.visualstudio.containers.docker",
+  "diffEditor.ignoreTrimWhitespace": true,
+  /*
+  |-···----------------------------------------------------------···-|
+    */
+  // "editor.formatOnPaste": false,
+  // "editor.formatOnSave": true,
+  // "editor.formatOnSaveMode": "file",
+  // "editor.formatOnType": false,
+  // "editor.suggest.showFiles": true,
+  // "editor.suggest.showFolders": true,
+  // "editor.tabSize": 2,
+  // "files.eol": "\n",
+  // "files.insertFinalNewline": true,
+  // "files.trimFinalNewlines": true,
+  // "files.trimTrailingWhitespace": true,
+  //                                                               ――
+  // ―― CODEACTIONSONSAVE BEHAVIOUR:
+  // ...existing code...
+  "editor.inlineSuggest.showToolbar": "always",
+  "editor.minimap.renderCharacters": false,
+  "editor.minimap.showSlider": "always",
+  "editor.minimap.size": "fit",
+  "editor.suggest.localityBonus": true,
+  "eslint.run": "onSave",
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "git.openRepositoryInParentFolders": "always",
+  // "github.copilot.enable": {
+  //   "*": true,
+  //   "markdown": true,
+  //   "plaintext": true,
+  //   "scminput": false
+  // },
+  // ...existing code...
+  "makefile.configureOnOpen": true,
+  // ],
+  "material-icon-theme.folders.associations": {
+    "chatgpt": "cobol",
+    "eslint-plugin": "rules",
+    "memory-bank": "rules",
+    "prompts": "log",
+    "chatmodes": "vm",
+    "instructions": "class"
+  },
+  "polyglot-notebook.logLevel": "Warn",
+  "polyglot-notebook.suppressPromptToSaveDefaults": true,
+  "python.defaultInterpreterPath": "${workspaceFolder}/python/.venv/bin/python",
+  "python.terminal.activateEnvironment": true,
+  "python.terminal.activateEnvInCurrentTerminal": true,
+  "python.envFile": "${workspaceFolder}/python/.env",
+  "python.analysis.extraPaths": [
+    "${workspaceFolder}/python/src",
+    "${workspaceFolder}/python"
+  ],
+  "python.autoComplete.extraPaths": [
+    "${workspaceFolder}/python/src",
+    "${workspaceFolder}/python"
+  ],
+  "jupyter.interactiveWindow.textEditor.executeSelection": true,
+  "jupyter.askForKernelRestart": false,
+  "python.testing.pytestEnabled": true,
+  "python.testing.pytestArgs": ["python/tests"],
+  "python.testing.unittestEnabled": false,
+  "python.testing.autoTestDiscoverOnSaveEnabled": true,
+  "python.terminal.executeInFileDir": true,
+  "python.terminal.focusAfterLaunch": true,
+
+  // "remote.defaultExtensionsIfInstalledLocally": [
+  //   "GitHub.copilot",
+  //   "GitHub.copilot-chat",
+  //   "GitHub.vscode-pull-request-github"
+  // ],
+  // "terminal.integrated.env.linux": {},
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "editor.formatOnSaveMode": "modificationsIfAvailable",
+  "eslint.codeActionsOnSave.mode": "all",
+  "workbench.colorTheme": "Pop N' Lock Theme by Luxcium ✨ Alexis's Black ⛷",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.productIconTheme": "Default",
+  /*
+    |-··----------------------------------------------------------··-|
+  */
+  // ========================================
+  // Accessibility and Voice
+  // ========================================
+  "accessibility.signals.chatRequestSent": {
+    "sound": "auto"
+  },
+  "accessibility.signals.chatResponseReceived": {
+    "sound": "auto"
+  },
+  "accessibility.verbosity.inlineChat": true,
+  "accessibility.verbosity.panelChat": true,
+  // #endregion: FORMAT BEHAVIOUR                                    !
+  /*
+    |-··----------------------------------------------------------··-|
+  */
+  // #region BETTER COMMENTS                                         !
+  /*
+     "problemsErrorIcon.foreground": "#ff3366",
+     "problemsInfoIcon.foreground": "#ffcc55ee",
+     "problemsWarningIcon.foreground": "#ccff33",
+  */
+  // "#F36F"
+  // "#F80B"
+  // "#FF0B"
+  // "#0F0B"
+  // "#39FB"
+  // "#93FB"
+  // "#F36F",
+  // "#F364",
+  // "#CF3F",
+  // "#CF34",
+  // "#39CF",
+  // "#39C4",
+  // "#FB0F",
+  // "#FB04",
+  "better-comments.highlightPlainText": true,
+  "better-comments.multilineComments": true,
+  "better-comments.tags": [
+    {
+      "backgroundColor": "#F365",
+      "color": "#F36",
+      "strikethrough": false,
+      // ~!·------------------------------------------------------!~
+      "tag": "~!"
+    },
+    {
+      "backgroundColor": "#F806",
+      "color": "#F80",
+      "strikethrough": false,
+      // ~$·------------------------------------------------------$~
+      "tag": "~$"
+    },
+    // <~~---
+    // <-----
+    // <<----
+    // >-----
+    // >>----
+    // |-----
+    // ||----
+    // ------
+    {
+      "color": "#F83",
+      "strikethrough": false,
+      // <~~-----------------------------------------------------~~>
+      "tag": "<~~"
+      // "backgroundColor": "#F806"
+    },
+    {
+      "color": "#F83",
+      "strikethrough": false,
+      // <--------------------------------------------------------->
+      "tag": "<-----"
+      // "backgroundColor": "#F806"
+    },
+    {
+      "color": "#F83",
+      "strikethrough": false,
+      // <<------------------------------------------------------->>
+      "tag": "<<----"
+      // "backgroundColor": "#F806"
+    },
+    {
+      "color": "#F83",
+      "strikethrough": false,
+      // >---------------------------------------------------------<
+      "tag": ">-----"
+      // "backgroundColor": "#F806"
+    },
+    {
+      "color": "#F83",
+      "strikethrough": false,
+      // >>-------------------------------------------------------<<
+      "tag": ">>----"
+      // "backgroundColor": "#F806"
+    },
+    {
+      "color": "#F83",
+      "strikethrough": false,
+      // |---------------------------------------------------------|
+      "tag": "|-----"
+      // "backgroundColor": "#F806"
+    },
+    {
+      "color": "#F83",
+      "strikethrough": false,
+      // ||-------------------------------------------------------||
+      "tag": "||----"
+      // "backgroundColor": "#F806"
+    },
+    // {
+    //   // -----------------------------------------------------------
+    //   "tag": "------",
+    //   "color": "#F83",
+    //   "strikethrough": false,
+    //   "backgroundColor": "#F806"
+    // },
+    /*
+<-------------------------------------------------------------------->
+       */
+    // <=====
+    // <<====
+    // >=====
+    // >>====
+    // |=====
+    // ||====
+    // //====
+    // /=====
+    // ======
+    // /=//=
+    /*
+<====================================================================>
+       */
+    {
+      "backgroundColor": "#39C3",
+      "color": "#F36",
+      "strikethrough": false,
+      // /=//==//===//====//=====//======//=======//========//=====/
+      "tag": "/=//="
+    },
+    {
+      "backgroundColor": "#39C3",
+      "color": "#F36",
+      "strikethrough": false,
+      // //=//=//=//=//=//=//=//=//=//=//=//=//=//=//=//=//=//=//=//
+      "tag": "//=//="
+    },
+    {
+      "backgroundColor": "#7C25",
+      "color": "#7C2F",
+      "strikethrough": false,
+      // <===================================================================>
+      "tag": "<==="
+    },
+    {
+      "backgroundColor": "#7C25",
+      "color": "#7C2F",
+      "strikethrough": false,
+      // <<=================================================================>>
+      "tag": "<<=="
+    },
+    {
+      "backgroundColor": "#7C25",
+      "color": "#7C2F",
+      "strikethrough": false,
+      // >===================================================================<
+      "tag": ">==="
+    },
+    {
+      "backgroundColor": "#7C25",
+      "color": "#7C2F",
+      "strikethrough": false,
+      // >>=================================================================<<
+      "tag": ">>=="
+    },
+    {
+      "backgroundColor": "#7C25",
+      "color": "#7C2F",
+      "strikethrough": false,
+      // |===================================================================|
+      "tag": "|==="
+    },
+    {
+      "backgroundColor": "#7C25",
+      "color": "#7C2F",
+      "strikethrough": false,
+      // ||=================================================================||
+      "tag": "||=="
+      // "backgroundColor": "#F806"
+    },
+    {
+      "backgroundColor": "#7C25",
+      "color": "#7C2F",
+      "strikethrough": false,
+      // //=================================================================//
+      "tag": "//=="
+    },
+    {
+      "backgroundColor": "#7C25",
+      "color": "#7C2F",
+      "strikethrough": false,
+      // /===================================================================/
+      "tag": "/==="
+    },
+    // {
+    //   // ==================================================================
+    //   "tag": "====",
+    //   "color": "#7C2F",
+    //   "strikethrough": false,
+    //   "backgroundColor": "#7C25"
+    // },
+    {
+      "backgroundColor": "#7C25",
+      "color": "#7C2F",
+      "strikethrough": false,
+      // ~+---------------------------------------------------------+~
+      "tag": "~+"
+    },
+    {
+      "backgroundColor": "#FF05",
+      "color": "#FF0B",
+      "strikethrough": false,
+      // ~*---------------------------------------------------------*~
+      "tag": "~*"
+    },
+    {
+      "backgroundColor": "#39F5",
+      "color": "#39F",
+      "strikethrough": false,
+      // ~#---------------------------------------------------------#~
+      "tag": "~#"
+    },
+    {
+      "backgroundColor": "#93F5",
+      "color": "#93F",
+      "strikethrough": false,
+      // ~&---------------------------------------------------------&~
+      "tag": "~&"
+    },
+    {
+      "backgroundColor": "#39C3",
+      "color": "#F36",
+      "strikethrough": false,
+      // ~@---------------------------------------------------------@~
+      "tag": "~@"
+    },
+    {
+      "backgroundColor": "#4EF5",
+      "color": "#4EF",
+      "strikethrough": false,
+      // ~%---------------------------------------------------------%~
+      "tag": "~%"
+    },
+    {
+      "backgroundColor": "#4EF3",
+      "color": "#5AF",
+      "strikethrough": false,
+      // ~?---------------------------------------------------------?~
+      "tag": "~?"
+    },
+    // SECTION
+    {
+      "color": "#4EF",
+      "strikethrough": false,
+      "tag": "SECTION"
+    },
+    /*
+~ #F36F
+~ #F80B
+~ #FF0B
+~ #0F0B
+~ #39FB
+~ #93FB
+    */
+    // :!
+    {
+      "backgroundColor": "#F203",
+      "color": "#F20",
+      "strikethrough": false,
+      "tag": ":!"
+    },
+    // :~
+    {
+      "backgroundColor": "#39C3",
+      "color": "#FB3",
+      "strikethrough": false,
+      "tag": ":~"
+    },
+    // :@
+    {
+      "backgroundColor": "#39C6",
+      "color": "#F36",
+      "strikethrough": false,
+      "tag": ":@"
+    },
+    // :#
+    {
+      "backgroundColor": "#4AE3",
+      "color": "#4AE",
+      "strikethrough": false,
+      "tag": ":#"
+    },
+    // :$
+    {
+      "backgroundColor": "#F843",
+      "color": "#F84",
+      "strikethrough": false,
+      "tag": ":$"
+    },
+    // :%
+    {
+      "backgroundColor": "#4EF3",
+      "color": "#4EF",
+      "strikethrough": false,
+      "tag": ":%"
+    },
+    // :?
+    {
+      "backgroundColor": "#39F3",
+      "color": "#39F",
+      "strikethrough": false,
+      "tag": ":?"
+    },
+    // :&
+    {
+      "backgroundColor": "#93F3",
+      "color": "#93F",
+      "strikethrough": false,
+      "tag": ":&"
+    },
+    // :*
+    {
+      "backgroundColor": "#9C73",
+      "color": "#9C7",
+      "strikethrough": false,
+      "tag": ":*"
+    },
+    // :+
+    {
+      "backgroundColor": "#CF23",
+      "color": "#CF2",
+      "strikethrough": false,
+      "tag": ":+"
+    },
+    // !-
+    {
+      "backgroundColor": "#F203",
+      "color": "#F20",
+      "strikethrough": false,
+      "tag": "!-"
+    },
+    // @-
+    {
+      "backgroundColor": "#39C3",
+      "color": "#F36",
+      "strikethrough": false,
+      "tag": "@-"
+    },
+    // #-
+    {
+      "backgroundColor": "#4AE3",
+      "color": "#4AE",
+      "strikethrough": false,
+      "tag": "#-"
+    },
+    // $-
+    {
+      "backgroundColor": "#F843",
+      "color": "#F84",
+      "strikethrough": false,
+      "tag": "$-"
+    },
+    // %-
+    {
+      "backgroundColor": "#4EF3",
+      "color": "#4EF",
+      "strikethrough": false,
+      "tag": "%-"
+    },
+    // ?-
+    {
+      "backgroundColor": "#39F3",
+      "color": "#39F",
+      "strikethrough": false,
+      "tag": "?-"
+    },
+    // &-
+    {
+      "backgroundColor": "#93F3",
+      "color": "#93F",
+      "strikethrough": false,
+      "tag": "&-"
+    },
+    // *-
+    {
+      "backgroundColor": "#9C73",
+      "color": "#9C7",
+      "strikethrough": false,
+      "tag": "*-"
+    },
+    // ++
+    {
+      "backgroundColor": "#CF23",
+      "color": "#CF2",
+      "strikethrough": false,
+      "tag": "++"
+    },
+    // :-
+    {
+      "backgroundColor": "#9BE3",
+      "color": "#9BE",
+      "strikethrough": false,
+      "tag": ":-"
+    },
+    {
+      "backgroundColor": "transparent",
+      "color": "#F15E",
+      "strikethrough": false,
+      // constructor
+      "tag": "constructor"
+    },
+    {
+      "backgroundColor": "transparent",
+      "color": "#E22E",
+      "strikethrough": false,
+      // private
+      "tag": "private"
+    },
+    {
+      "backgroundColor": "transparent",
+      "color": "#FD3E",
+      "strikethrough": false,
+      // protected
+      "tag": "protected"
+    },
+    /*
+  |-···-----------------------------------------------------------―――――――――···-|
+
+    */
+    {
+      "backgroundColor": "transparent",
+      "color": "#FA0C",
+      "strikethrough": false,
+      // ――
+      "tag": "――"
+    },
+    {
+      "backgroundColor": "transparent",
+      "color": "#FA0C",
+      "strikethrough": false,
+      // |-···
+      "tag": "|-"
+    },
+    {
+      "backgroundColor": "transparent",
+      "color": "#6CBC",
+      "strikethrough": false,
+      // ‽
+      "tag": "‽"
+    },
+    {
+      "backgroundColor": "transparent",
+      "color": "#6CBC",
+      "strikethrough": false,
+      // TEST_MODULE
+      "tag": "TEST_MODULE"
+    },
+    {
+      "backgroundColor": "transparent",
+      "color": "#FFAA00CC", // "#FA0E",
+      "strikethrough": false,
+      // public
+      "tag": "public"
+    },
+    {
+      "backgroundColor": "transparent",
+      "color": "#FF6600AA",
+      "strikethrough": false,
+      // readonly
+      "tag": "readonly"
+    },
+    {
+      "backgroundColor": "transparent",
+      "color": "#FF6600",
+      "strikethrough": false,
+      // static
+      "tag": "static"
+    },
+    {
+      "backgroundColor": "transparent",
+      "color": "#6BFC",
+      "strikethrough": false,
+      // get
+      "tag": "get"
+    },
+    {
+      "backgroundColor": "transparent",
+      "color": "#85FE",
+      "strikethrough": false,
+      // set
+      "tag": "set"
+    },
+    {
+      "backgroundColor": "transparent",
+      "color": "#FB3F",
+      "strikethrough": false,
+      // async
+      "tag": "async"
+    },
+    {
+      "backgroundColor": "transparent",
+      "color": "#FB3F",
+      "strikethrough": false,
+      // https:
+      "tag": "https:"
+    },
+    {
+      "backgroundColor": "transparent",
+      "color": "#FB3F",
+      "strikethrough": false,
+      // https
+      "tag": "https:"
+    },
+    {
+      "backgroundColor": "transparent",
+      "color": "#FB3F",
+      "strikethrough": false,
+      // http
+      "tag": "http"
+    },
+    {
+      "backgroundColor": "transparent",
+      "color": "#FF8C00",
+      "strikethrough": false,
+      // TODO:
+      "tag": "TODO:"
+    },
+    {
+      "backgroundColor": "transparent",
+      "color": "#c54442",
+      "strikethrough": false,
+      // iterator
+      "tag": "iterator"
+    },
+    /*
+~~============================================================================== ~~
+*/
+    /*
+
+
+
+ ―1----------------------------------------------------------------------------- ~~
+    */
+    {
+      "backgroundColor": "transparent",
+      "color": "#F36F",
+      "strikethrough": false,
+      // ―1
+      "tag": "―1"
+    },
+    {
+      "backgroundColor": "transparent",
+      "color": "#F36F",
+      "strikethrough": false,
+      // 1―
+      "tag": "1―"
+    },
+    {
+      "backgroundColor": "transparent",
+      "color": "#F36F",
+      "strikethrough": false,
+      // -1
+      "tag": "―1"
+    },
+    {
+      "backgroundColor": "transparent",
+      "color": "#F36F",
+      "strikethrough": false,
+      // 1-
+      "tag": "1-"
+    },
+    {
+      "backgroundColor": "transparent",
+      "color": "#F36D",
+      "strikethrough": false,
+      // ―― END
+      "tag": "―― END"
+    },
+    {
+      "backgroundColor": "transparent",
+      "color": "#F36D",
+      "strikethrough": false,
+      // END
+      "tag": "END"
+    },
+    {
+      "backgroundColor": "transparent",
+      "color": "#F36D",
+      "strikethrough": false,
+      // ERROR
+      "tag": "ERROR"
+    },
+    // "#F36"
+    // "#F80B"
+    // "#FF0B"
+    // "#0F0B"
+    // "#39FB"
+    // "#93FB"
+    /*
+ ―1============================================================================= ~~
+ ―2----------------------------------------------------------------------------- ~~
+    */
+    {
+      "backgroundColor": "transparent",
+      "color": "#CF3F",
+      "strikethrough": false,
+      // ―2
+      "tag": "―2"
+    },
+    {
+      "backgroundColor": "transparent",
+      "color": "#CF3F",
+      "strikethrough": false,
+      // 2―
+      "tag": "2―"
+    },
+    {
+      "backgroundColor": "transparent",
+      "color": "#CF3F",
+      "strikethrough": false,
+      // -2
+      "tag": "-2"
+    },
+    {
+      "backgroundColor": "transparent",
+      "color": "#CF3F",
+      "strikethrough": false,
+      // 2-
+      "tag": "2-"
+    },
+    {
+      "backgroundColor": "transparent",
+      "color": "#CF3F",
+      "strikethrough": false,
+      // WARNING
+      "tag": "WARNING"
+    },
+    {
+      "backgroundColor": "transparent",
+      "color": "#CF3F",
+      "strikethrough": false,
+      // ―― START
+      "tag": "―― START"
+    },
+    {
+      "backgroundColor": "transparent",
+      "color": "#CF3F",
+      "strikethrough": false,
+      // START
+      "tag": "START"
+    },
+    /*
+ ―2============================================================================= ~~
+ ―3----------------------------------------------------------------------------- ~~
+    */
+    {
+      "backgroundColor": "transparent",
+      "color": "#FB0F",
+      "strikethrough": false,
+      // ―3
+      "tag": "―3"
+    },
+    {
+      "backgroundColor": "transparent",
+      "color": "#FB0F",
+      "strikethrough": false,
+      // -3
+      "tag": "-3"
+    },
+    {
+      "backgroundColor": "transparent",
+      "color": "#FB0F",
+      "strikethrough": false,
+      // 3―
+      "tag": "3―"
+    },
+    {
+      "backgroundColor": "transparent",
+      "color": "#FB0F",
+      "strikethrough": false,
+      // 3-
+      "tag": "3-"
+    },
+    {
+      "backgroundColor": "transparent",
+      "color": "#FB0F",
+      "strikethrough": false,
+      // INFO
+      "tag": "INFO"
+    },
+    /*
+ ―3============================================================================= ~~
+ ―4----------------------------------------------------------------------------- ~~
+    */
+    {
+      "backgroundColor": "transparent",
+      "color": "#39CF",
+      "strikethrough": false,
+      // ―4
+      "tag": "―4"
+    },
+    {
+      "backgroundColor": "transparent",
+      "color": "#39CF",
+      "strikethrough": false,
+      // 4―
+      "tag": "4―"
+    },
+    {
+      "backgroundColor": "transparent",
+      "color": "#39CF",
+      "strikethrough": false,
+      // -4
+      "tag": "-4"
+    },
+    {
+      "backgroundColor": "transparent",
+      "color": "#39CF",
+      "strikethrough": false,
+      // 4-
+      "tag": "4-"
+    },
+    {
+      "backgroundColor": "transparent",
+      "color": "#39CF",
+      "strikethrough": false,
+      // HINT
+      "tag": "HINT"
+    },
+    /*
+ ―4============================================================================= ~~
+ ―5----------------------------------------------------------------------------- ~~
+    */
+    {
+      "backgroundColor": "transparent",
+      "color": "#39FD",
+      "strikethrough": false,
+      // ―5
+      "tag": "―5"
+    },
+    /*
+ ―5============================================================================= ~~
+ ―6----------------------------------------------------------------------------- ~~
+    */
+    {
+      "backgroundColor": "transparent",
+      "color": "#93FD",
+      "strikethrough": false,
+      // ―6
+      "tag": "―6"
+    },
+    /*
+―6============================================================================== ~
+*/
+    /*
+―6============================================================================== ~
+―0------------------------------------------------------------------------------ ~
+*/
+    {
+      "backgroundColor": "transparent",
+      "color": "#FFFD",
+      "strikethrough": false,
+      // ―0
+      "tag": "―0"
+    },
+    {
+      "backgroundColor": "transparent",
+      "color": "#FFFD",
+      "strikethrough": false,
+      // 0-
+      "tag": "0-"
+    },
+    /*
+―0============================================================================== ~
+*/
+    /*
+················································································
+================================================================================
+*/
+    // {
+    //   // ====
+    //   "tag": "====",
+    //   "color": "#FA0C",
+    //   "strikethrough": false,
+    //   "backgroundColor": "transparent"
+    // },
+    // ·········································································
+    {
+      "backgroundColor": "transparent",
+      "color": "#FA0C",
+      "strikethrough": false,
+      // ···
+      "tag": "···"
+    },
+    {
+      "backgroundColor": "transparent",
+      "color": "#FF2D00",
+      "strikethrough": false,
+      // !!
+      "tag": "!!"
+    },
+    {
+      "backgroundColor": "transparent",
+      "color": "#F36B",
+      "strikethrough": false,
+      // @
+      "tag": "-@"
+    },
+    {
+      "backgroundColor": "transparent",
+      "color": "#4AE",
+      "strikethrough": false,
+      // #
+      "tag": "#"
+    },
+    {
+      "backgroundColor": "transparent",
+      "color": "#f48e41",
+      "strikethrough": false,
+      // $
+      "tag": "$"
+    },
+    //
+    {
+      "backgroundColor": "transparent",
+      "color": "#41e2f4",
+      "strikethrough": false,
+      // %
+      "tag": "%"
+    },
+    {
+      "backgroundColor": "transparent",
+      "color": "#39FB",
+      "strikethrough": false,
+      // ?
+      "tag": "?"
+    },
+    {
+      "backgroundColor": "transparent",
+      "color": "#93FB",
+      "strikethrough": false,
+      // &
+      "tag": "&"
+    },
+    {
+      "backgroundColor": "transparent",
+      "color": "#98C379",
+      "strikethrough": false,
+      // *
+      "tag": "*"
+    },
+    {
+      "backgroundColor": "transparent",
+      "color": "#F80B",
+      "strikethrough": false,
+      // _
+      "tag": "_"
+    },
+    // {
+    //   // =
+    //   "tag": "=",
+    //   "color": "#F36B",
+    //   "strikethrough": false,
+    //   "backgroundColor": "transparent"
+    // },
+    {
+      "backgroundColor": "transparent",
+      "color": "#c5f442",
+      "strikethrough": false,
+      // +
+      "tag": "+"
+    },
+    {
+      "backgroundColor": "transparent",
+      "color": "#c54442",
+      "strikethrough": false,
+      // †
+      "tag": "†"
+    },
+    {
+      "backgroundColor": "transparent",
+      "color": "#FF0B",
+      "strikethrough": false,
+      // ¬
+      "tag": "¬"
+    },
+    // {
+    //   // ~
+    //   "tag": "~",
+    //   "color": "#FF6600DD",
+    //   "strikethrough": false,
+    //   "backgroundColor": "transparent"
+    // },
+    // {
+    //   // -
+    //   "tag": "-",
+    //   "color": "#9BEA",
+    //   "strikethrough": false,
+    //   "backgroundColor": "transparent"
+    // },
+    {
+      "backgroundColor": "transparent",
+      "color": "#F15",
+      "strikethrough": false,
+      "tag": "BUG"
+    },
+    {
+      "backgroundColor": "transparent",
+      "color": "#FB3",
+      "strikethrough": false,
+      "tag": "CONSOLE"
+    },
+    {
+      "backgroundColor": "transparent",
+      "color": "#F36",
+      "strikethrough": false,
+      "tag": "ERROR"
+    },
+    {
+      "backgroundColor": "transparent",
+      "color": "#F80",
+      "strikethrough": false,
+      "tag": "FIXME"
+    },
+    {
+      "backgroundColor": "transparent",
+      "color": "#93F",
+      "strikethrough": false,
+      "tag": "HACK"
+    },
+    {
+      "backgroundColor": "transparent",
+      "color": "#39C",
+      "strikethrough": false,
+      "tag": "HINT"
+    },
+    {
+      "backgroundColor": "transparent",
+      "color": "#FB0",
+      "strikethrough": false,
+      "tag": "INFO"
+    },
+    // {
+    //   "tag": "LOG",
+    //   "color": "#ACF",
+    //   "strikethrough": false,
+    //   "backgroundColor": "transparent"
+    // },
+    // {
+    //   "tag": "TODO:",
+    //   "color": "#FB3",
+    //   "strikethrough": false,
+    //   "backgroundColor": "transparent"
+    // },
+    {
+      "backgroundColor": "transparent",
+      "color": "#BF2",
+      "strikethrough": false,
+      "tag": "WARNING"
+    },
+    {
+      "backgroundColor": "transparent",
+      "color": "#E22",
+      "strikethrough": false,
+      "tag": "XXX"
+    }
+  ],
+  // Inline suggestions
+  "editor.inlineSuggest.syntaxHighlightingEnabled": true,
+  "editor.quickSuggestions": {
+    "comments": "on",
+    "other": "on",
+    "strings": "on"
+  },
+  // #endregion: editor.rulers [scminput]                                    !
+  /*
+    |-··----------------------------------------------------------··-|
+  */
+  // #region editor.rulers                                           !
+  "[scminput]": {
+    "editor.rulers": [
+      {
+        "color": "#F368",
+        "column": 70
+      },
+      {
+        "color": "#F838",
+        "column": 50
+      }
+    ],
+    "editor.wordWrap": "on",
+    "editor.wordWrapColumn": 70
+  },
+
+  "editor.rulers": [
+    {
+      "color": "#FC33",
+      "column": 2
+    },
+    {
+      "color": "#F83",
+      "column": 70
+    },
+    {
+      "color": "#F36",
+      "column": 80
+    },
+    {
+      "color": "#6C9FE844",
+      "column": 81
+    },
+    {
+      "color": "#71A4E355",
+      "column": 83
+    },
+    {
+      "color": "#90B9F166",
+      "column": 85
+    },
+    {
+      "color": "#9CC1F366",
+      "column": 88
+    },
+    {
+      "color": "#A8C9F466",
+      "column": 91
+    },
+    {
+      "color": "#B5D1F666",
+      "column": 95
+    },
+    {
+      "color": "#C1D8F766",
+      "column": 99
+    },
+    {
+      "color": "#CEE0F955",
+      "column": 103
+    },
+    {
+      "color": "#DAE8FA44",
+      "column": 107
+    },
+    {
+      "color": "#E6F0FC44",
+      "column": 111
+    },
+    {
+      "color": "#F3F7FD33",
+      "column": 114
+    },
+    {
+      "color": "#F3F7FD22",
+      "column": 117
+    },
+    {
+      "color": "#F3F7FD11",
+      "column": 119
+    },
+    {
+      "color": "#F368",
+      "column": 120
+    },
+    {
+      "color": "#F36A",
+      "column": 121
+    },
+    {
+      "color": "#F80C",
+      "column": 122
+    },
+    {
+      "color": "#F80F",
+      "column": 123
+    },
+    {
+      "color": "#FF0D",
+      "column": 124
+    },
+    {
+      "color": "#FF0F",
+      "column": 125
+    },
+    {
+      "color": "#0F0F",
+      "column": 126
+    },
+    {
+      "color": "#0F0D",
+      "column": 127
+    },
+    {
+      "color": "#39FF",
+      "column": 128
+    },
+    {
+      "color": "#39FC",
+      "column": 129
+    },
+    {
+      "color": "#93FA",
+      "column": 130
+    },
+    {
+      "color": "#93F8",
+      "column": 131
+    }
+  ],
+  // ========================================
+  // Formatting and Linting Settings
+  // ========================================
+  // Prettier as default formatter for JS/TS
+  // Formatting and Linting Settings (deduplicated)
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true
+  },
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  // ESLint auto fix on save (string array form)
+  "editor.codeActionsOnSave": ["source.fixAll", "source.fixAll.eslint"],
+
+  // Microsoft Edge DevTools Configuration - Enhanced Error Integration
+
+  "vscode-edge-devtools.useHttps": false,
+  "vscode-edge-devtools.headless": false,
+  "vscode-edge-devtools.timeout": 10000,
+  "vscode-edge-devtools.port": 9222,
+  "vscode-edge-devtools.hostname": "localhost",
+
+  // Notebook integration
+  "notebook.experimental.generate": true,
+  // "todo-tree.highlights.foregroundColourScheme": [
+  //   "white",
+  //   "black",
+  //   "black",
+  //   "white",
+  //   "white",
+  //   "white",
+  //   "black"
+  // ],
+  // "todo-tree.highlights.backgroundColourScheme": [
+  //   "red",
+  //   "orange",
+  //   "yellow",
+  //   "green",
+  //   "blue",
+  //   "indigo",
+  //   "violet"
+  // ],
+  "todo-tree.filtering.excludedWorkspaces": [], // new items
+  // #endregion: BETTER COMMENTS                                           !
+  /*
+    |-··----------------------------------------------------------··-|
+  */
+  // #region TODO TREE                                               !
+  "todo-tree.filtering.excludeGlobs": ["**/node_modules"],
+  "todo-tree.filtering.ignoreGitSubmodules": false,
+  "todo-tree.filtering.includedWorkspaces": [], // new items
+  "todo-tree.filtering.includeGlobs": [], // new items
+  "todo-tree.filtering.includeHiddenFiles": false,
+  "todo-tree.filtering.passGlobsToRipgrep": true,
+  "todo-tree.filtering.scopes": [], // new items
+  "todo-tree.filtering.useBuiltInExcludes": "file and search excludes",
+  "todo-tree.general.debug": false,
+  "todo-tree.general.exportPath": "~/todo-tree-%Y%m%d-%H%M.txt",
+  "todo-tree.general.revealBehaviour": "end of todo",
+  "todo-tree.general.rootFolder": "",
+  "todo-tree.general.showActivityBarBadge": false, // new items
+  "todo-tree.general.showIconsInsteadOfTagsInStatusBar": false, // new items
+  "todo-tree.general.statusBar": "current file",
+  "todo-tree.general.statusBarClickBehaviour": "cycle",
+  "todo-tree.general.tagGroups": {}, // new items
+  "todo-tree.general.tags": [
+    "-:",
+    "-!",
+    "-?",
+    "-@",
+    "-*",
+    "-&",
+    "-#",
+    "-%",
+    "-%0",
+    "-%1",
+    "-%2",
+    "-%3",
+    "-%4",
+    "-%5",
+    "-%6",
+    "-+",
+    "->",
+    "-$",
+    ":::",
+    "::",
+    "!:",
+    "?:",
+    "[ ]",
+    "[x]",
+    "@:",
+    "*:",
+    "&:",
+    "#-|",
+    "#:",
+    "#endregion",
+    "#region",
+    "%:",
+    "←:",
+    "→",
+    "+:",
+    "|-::",
+    "$:",
+    "BUG:",
+    "CONSOLE:",
+    "SIDE EFFECT:",
+    "REVIEW NEEDED:",
+    "ERROR HANDLER:",
+    "ERROR:",
+    "eslint-disable",
+    "FIXME:",
+    "FUNC CALL:",
+    "FUNC DEF:",
+    "HACK:",
+    "HARDCODE:",
+    "TASK LIST:",
+    "HINT:",
+    "INFO:",
+    "LOG:",
+    "RETURNS:",
+    "SECTION:",
+    "SEND COMMAND:",
+    "SIDE EFFECTS:",
+    "TODO:",
+    "UNIMPLEMENTED:",
+    "UNSAFE:",
+    "WARNING:",
+    "XXX:",
+    ":→",
+    "→:",
+    ":←",
+    "←",
+    "::"
+  ],
+  "todo-tree.highlights.customHighlight": {
+    // -: ------------------------------------------------------------
+    "-:": {
+      "background": "#F15",
+      "foreground": "#F15",
+      "gutterIcon": false,
+      "hideFromStatusBar": true,
+      "hideFromTree": true,
+      // "borderRadius": "0px",
+      "opacity": 15
+      // "type": "whole-line",
+    },
+    // -! ------------------------------------------------------------
+    "-!": {
+      "background": "#9BF",
+      "foreground": "#BBB",
+      "gutterIcon": false,
+      "hideFromStatusBar": true,
+      "hideFromTree": true,
+      "opacity": 20,
+      // "borderRadius": "0px",
+      "rulerColour": "#FFF5"
+      // "type": "whole-line",
+    },
+    // -? ------------------------------------------------------------
+    "-?": {
+      "background": "#F14",
+      "foreground": "#FDB",
+      // "type": "whole-line",
+      "gutterIcon": false,
+      "hideFromStatusBar": true,
+      // "borderRadius": "0px",
+      "hideFromTree": true,
+      "opacity": 30
+    },
+    // -* ------------------------------------------------------------
+    "-*": {
+      "background": "#0BF",
+      "foreground": "#FB0",
+      "gutterIcon": false,
+      "hideFromStatusBar": true,
+      "hideFromTree": true,
+      "iconColour": "#FB0",
+      "opacity": 20,
+      // "borderRadius": "0px",
+      "rulerColour": "#FB05"
+      // "type": "whole-line",
+    },
+    // -& ------------------------------------------------------------
+    "-&": {
+      "background": "#93F",
+      "foreground": "#5CF",
+      // "type": "whole-line",
+      "gutterIcon": false,
+      "hideFromStatusBar": true,
+      "hideFromTree": true,
+      "opacity": 25,
+      "rulerColour": "#F45"
+    },
+    // -# ------------------------------------------------------------
+    "-#": {
+      "background": "#9BE",
+      "foreground": "#9BE",
+      "gutterIcon": true,
+      "hideFromStatusBar": true,
+      "hideFromTree": true,
+      "icon": "star",
+      "iconColour": "#9BE",
+      "opacity": 30,
+      "rulerColour": "#9BE",
+      "rulerLane": "center",
+      "rulerOpacity": 50,
+      "type": "line"
+    },
+    // -% ------------------------------------------------------------
+    "-%": {
+      "background": "#BF2",
+      "foreground": "#FDB",
+      // "type": "whole-line",
+      "gutterIcon": false,
+      "hideFromStatusBar": true,
+      "hideFromTree": true,
+      "opacity": 25
+    },
+    // -+ ------------------------------------------------------------
+    "-+": {
+      "background": "#DF3",
+      "foreground": "#DF3",
+      // "type": "whole-line",
+      "gutterIcon": false,
+      "hideFromStatusBar": true,
+      // "borderRadius": "0px",
+      "hideFromTree": true,
+      "opacity": 25
+    },
+    // -> ------------------------------------------------------------
+    "->": {
+      "background": "#93F",
+      "foreground": "#5CF",
+      "gutterIcon": true,
+      "icon": "report",
+      "iconColour": "#FB0",
+      "opacity": 30,
+      // "borderRadius": "0px",
+      "rulerColour": "#5CF5"
+      // "type": "whole-line",
+    },
+    // -$ ------------------------------------------------------------
+    "-$": {
+      "background": "#F84",
+      "foreground": "#F84",
+      "gutterIcon": true,
+      "hideFromStatusBar": true,
+      "hideFromTree": true,
+      "icon": "star",
+      "iconColour": "#F84",
+      "opacity": 30,
+      "rulerColour": "#F84",
+      "rulerLane": "center",
+      "rulerOpacity": 50,
+      "type": "line"
+    },
+    // ::
+    "::": {
+      "background": "#9BE",
+      "foreground": "#9BE",
+      "gutterIcon": true,
+      "icon": "grabber",
+      "iconColour": "#9BE",
+      "opacity": 30,
+      "rulerColour": "#9BE",
+      "rulerLane": "full",
+      "rulerOpacity": 50,
+      "type": "whole-line"
+    },
+    // :::
+    ":::": {
+      "background": "#F84",
+      "foreground": "#F84",
+      "gutterIcon": true,
+      "icon": "grabber",
+      "iconColour": "#F84",
+      "opacity": 30,
+      "rulerColour": "#F84",
+      "rulerLane": "full",
+      "rulerOpacity": 50,
+      "type": "whole-line"
+    },
+    // !: ------------------------------------------------------------
+    "!:": {
+      "background": "#F20",
+      "foreground": "#F20",
+      "gutterIcon": true,
+      "hideFromStatusBar": true,
+      "hideFromTree": true,
+      "icon": "stop",
+      "iconColour": "#F20",
+      "opacity": 20
+      // "borderRadius": "0px",
+      // "type": "whole-line",
+    },
+    // ?: ------------------------------------------------------------
+    "?:": {
+      "background": "#39F",
+      "foreground": "#39F",
+      "gutterIcon": true,
+      "hideFromStatusBar": true,
+      "hideFromTree": true,
+      "icon": "unverified",
+      "iconColour": "#39F",
+      "opacity": 20
+      // "borderRadius": "0px",
+      // "type": "whole-line",
+    },
+    // @: ------------------------------------------------------------
+    "@:": {
+      "background": "#F36",
+      "foreground": "#F36",
+      "gutterIcon": true,
+      "hideFromStatusBar": true,
+      "hideFromTree": true,
+      "icon": "mention",
+      "iconColour": "#F36",
+      "opacity": 20
+      // "borderRadius": "0px",
+      // "type": "whole-line",
+    },
+    // *: ------------------------------------------------------------
+    "*:": {
+      "background": "#9C7",
+      "foreground": "#9C7",
+      "gutterIcon": true,
+      "hideFromStatusBar": true,
+      "hideFromTree": true,
+      "icon": "north-star",
+      "iconColour": "#9C7",
+      "opacity": 20
+      // "borderRadius": "0px",
+      // "type": "whole-line",
+    },
+    // &: ------------------------------------------------------------
+    "&:": {
+      "background": "#93F",
+      "foreground": "#93F",
+      "gutterIcon": true,
+      "hideFromStatusBar": true,
+      "hideFromTree": true,
+      "icon": "squirrel",
+      "iconColour": "#93F",
+      "opacity": 20
+      // "borderRadius": "0px",
+      // "type": "whole-line",
+    },
+    // #-| -----------------------------------------------------------
+    "#-|": {
+      "background": "#F36",
+      "foreground": "#F36",
+      "gutterIcon": true,
+      "icon": "cpu",
+      "iconColour": "#F36",
+      "opacity": 20
+      // "borderRadius": "0px",
+      // "type": "whole-line",
+    },
+    // #: ------------------------------------------------------------
+    "#:": {
+      "background": "#9BE",
+      "foreground": "#9BE",
+      "gutterIcon": true,
+      "hideFromStatusBar": true,
+      "hideFromTree": true,
+      "icon": "file-binary",
+      "iconColour": "#9BE",
+      "opacity": 20
+      // "borderRadius": "0px",
+      // "type": "whole-line",
+    },
+    "#endregion": {
+      "background": "#F15",
+      "foreground": "#F15",
+      "gutterIcon": true,
+      "hideFromStatusBar": true,
+      // "type": "tag-and-comment",
+      // "borderRadius": "7px",
+      "hideFromTree": true,
+      "icon": "mirror",
+      "iconColour": "#F15",
+      "opacity": 30
+    },
+    "#region": {
+      "background": "#DF3",
+      "foreground": "#DF3",
+      "gutterIcon": true,
+      // "type": "tag-and-comment",
+      // "borderRadius": "7px",
+      "icon": "mirror",
+      "iconColour": "#DF3",
+      "opacity": 30
+    },
+    // %: ------------------------------------------------------------
+    "%:": {
+      "background": "#4EF",
+      "foreground": "#4EF",
+      "gutterIcon": true,
+      "hideFromStatusBar": true,
+      "hideFromTree": true,
+      "icon": "file-code",
+      "iconColour": "#4EF",
+      "opacity": 20
+      // "borderRadius": "0px",
+      // "type": "whole-line",
+    },
+    // ← -------------------------------------------------------------
+    "←": {
+      "background": "#5CF",
+      "foreground": "#5CF",
+      "gutterIcon": false,
+      "hideFromStatusBar": true,
+      // "type": "text-and-comment",
+      "hideFromTree": true,
+      "opacity": 30
+    },
+    // → -------------------------------------------------------------
+    "→": {
+      "background": "#CF2",
+      "foreground": "#CF2",
+      "gutterIcon": true,
+      // "borderRadius": "0px",
+      "hideFromStatusBar": true,
+      "hideFromTree": true,
+      // "type": "whole-line",
+      "icon": "cross-reference",
+      "iconColour": "#CF2",
+      "opacity": 50
+    },
+    // $: ------------------------------------------------------------
+    "$:": {
+      "background": "#F84",
+      "foreground": "#F84",
+      "gutterIcon": true,
+      "hideFromStatusBar": true,
+      "hideFromTree": true,
+      "icon": "star",
+      "iconColour": "#F84",
+      "opacity": 20
+      // "borderRadius": "0px",
+      // "type": "whole-line",
+    },
+    // BUG: ----------------------------------------------------------
+    "BUG:": {
+      "background": "#F15",
+      "fontWeight": "800",
+      "foreground": "#F15",
+      "gutterIcon": true,
+      "icon": "bug",
+      "iconColour": "#F15",
+      "opacity": 10
+    },
+    // CONSOLE: ----------------------------------------------------
+    "CONSOLE:": {
+      "background": "#4B9",
+      "foreground": "#224",
+      "gutterIcon": true,
+      "icon": "terminal",
+      "iconColour": "#4B9"
+    },
+    // ERROR HANDLER: ------------------------------------------------
+    "ERROR HANDLER:": {
+      "background": "#F35",
+      "foreground": "#FC9",
+      "gutterIcon": true,
+      // "type": "tag-and-comment",
+      // "ERROR HANDLER:", -------------------------------------------
+      "icon": "note",
+      // "borderRadius": "7px",
+      "iconColour": "#F149"
+    },
+    // ERROR: --------------------------------------------------------
+    "ERROR:": {
+      "background": "#F36",
+      "fontWeight": "500",
+      "foreground": "#F36",
+      "gutterIcon": true,
+      "icon": "x-circle",
+      "iconColour": "#F36",
+      "opacity": 30
+    },
+    // eslint-disable ------------------------------------------------
+    "eslint-disable": {
+      "background": "#93F",
+      "foreground": "#5CF",
+      "gutterIcon": true,
+      // "borderRadius": "0px",
+      "icon": "report",
+      "iconColour": "#FB0",
+      // "type": "whole-line",
+      "opacity": 30
+    },
+    // FIXME: --------------------------------------------------------
+    "FIXME:": {
+      "background": "#FB3",
+      "fontWeight": "600",
+      "foreground": "#FB3",
+      "gutterIcon": true,
+      "icon": "tools",
+      "iconColour": "#FB3",
+      "opacity": 30
+    },
+    // FUNC CALL:  (Special function xyz)  -------------------------
+    "FUNC CALL:": {
+      "background": "#ADE",
+      "fontWeight": "700",
+      "foreground": "#07F",
+      "gutterIcon": true,
+      // "": "#FB7",
+      // "type": "tag",
+      "hideFromStatusBar": true,
+      "icon": "package-dependents",
+      "iconColour": "#ADE",
+      "opacity": 100,
+      "rulerColour": "#07F"
+    },
+    // FUNC DEF: (Special function xyz) ----------------------------
+    "FUNC DEF:": {
+      "background": "#07F",
+      "fontWeight": "700",
+      "foreground": "#FB7",
+      "gutterIcon": true,
+      "hideFromStatusBar": true,
+      "icon": "package-dependencies",
+      "iconColour": "#55BBFFBB",
+      "opacity": 50,
+      "rulerColour": "#FB7"
+    },
+    // HACK: -------------------------------------------------------
+    "HACK:": {
+      "background": "#74F",
+      "fontWeight": "300",
+      "foreground": "#FC9",
+      "gutterIcon": true,
+      "icon": "squirrel",
+      "iconColour": "#93F",
+      "opacity": 60
+    },
+    // HARDCODE: ---------------------------------------------------
+    "HARDCODE:": {
+      "background": "#F35",
+      "fontWeight": "400",
+      "foreground": "#FC9",
+      "gutterIcon": true,
+      // "type": "tag-and-comment",
+      // "ERROR HANDLER:", -------------------------------------------
+      "icon": "cpu",
+      // "borderRadius": "7px",
+      "iconColour": "#F149"
+    },
+    // INFO: ---------------------------------------------------------
+    "INFO:": {
+      "background": "#05F",
+      "fontWeight": "300",
+      "foreground": "#FB7",
+      "gutterIcon": true,
+      "icon": "info",
+      "iconColour": "#05F",
+      "opacity": 30,
+      "rulerColour": "#BBB",
+      "rulerLane": "full",
+      "rulerOpacity": 50
+    },
+    // LOG: ----------------------------------------------------------
+    "LOG:": {
+      "background": "#9BE",
+      "foreground": "#9BE",
+      "gutterIcon": true,
+      "icon": "checklist",
+      "iconColour": "#9BE"
+    },
+    // RETURNS: ----------------------------------------------------
+    "RETURNS:": {
+      "background": "#CF2",
+      "foreground": "#224",
+      // "borderRadius": "7px",
+      "gutterIcon": true,
+      "icon": "cross-reference",
+      "iconColour": "#CF2"
+    },
+    // REVIEW NEEDED: ----------------------------------------------
+    "REVIEW NEEDED:": {
+      "background": "#05F",
+      "fontWeight": "400",
+      "foreground": "#FC9",
+      "gutterIcon": true,
+      // "borderRadius": "7px",
+      "icon": "search",
+      "iconColour": "#93F",
+      "opacity": 50
+    },
+    // SECTION: ----------------------------------------------------
+    "SECTION:": {
+      "background": "#DF3",
+      "fontWeight": "500",
+      "foreground": "#DF3",
+      "gutterIcon": true,
+      "hideFromStatusBar": true,
+      // "type": "whole-line",
+      "hideFromTree": true,
+      "icon": "mirror",
+      "iconColour": "#DF3",
+      "opacity": 40
+    },
+    // SIDE EFFECT: ------------------------------------------------
+    "SIDE EFFECT:": {
+      "background": "#F35",
+      "fontWeight": "500",
+      "foreground": "#FC9",
+      "gutterIcon": true,
+      "hideFromStatusBar": true,
+      "hideFromTree": true,
+      "icon": "mirror",
+      "iconColour": "#DF3",
+      "opacity": 40,
+      "type": "text-and-comment"
+    },
+    // "TASK LIST:",
+    // TASK LIST: [TODO] (Review Documentation) ----------------------------
+    "TASK LIST:": {
+      "background": "#07F",
+      "fontWeight": "700",
+      "foreground": "#FB7",
+      "gutterIcon": true,
+      "hideFromStatusBar": true,
+      "icon": "tasklist",
+      "iconColour": "#55BBFFBB",
+      "opacity": 50,
+      "rulerColour": "#FB7",
+      "type": "tag-and-subTag"
+    },
+    // TODO: ---------------------------------------------------------
+    "TODO:": {
+      "background": "#F80",
+      "fontWeight": "700",
+      "foreground": "#F80",
+      "gutterIcon": true,
+      "icon": "bookmark",
+      "iconColour": "#F80",
+      "opacity": 20
+    },
+    // UNIMPLEMENTED: ----------------------------------------------
+    "UNIMPLEMENTED:": {
+      "background": "#F35",
+      "fontWeight": "500",
+      "foreground": "#FC9",
+      "icon": "skip",
+      "iconColour": "#EE3366EE",
+      "opacity": 50
+    },
+    // UNSAFE: -----------------------------------------------------
+    "UNSAFE:": {
+      "background": "#900",
+      "fontWeight": "900",
+      "foreground": "#FB3",
+      "gutterIcon": true,
+      "icon": "flame",
+      "iconColour": "#900"
+    },
+    // WARNING: ------------------------------------------------------
+    "WARNING:": {
+      "background": "#BF2",
+      "fontWeight": "400",
+      "foreground": "#BF2",
+      "gutterIcon": true,
+      "icon": "alert",
+      "iconColour": "#BF2",
+      "opacity": 30
+    },
+    // XXX: --------------------------------------------------------
+    "XXX:": {
+      "background": "#000",
+      "fontWeight": "200",
+      "foreground": "#E22",
+      "gutterIcon": true,
+      "icon": "law",
+      "iconColour": "#E22",
+      "opacity": 30
+    }
+  },
+  "todo-tree.highlights.defaultHighlight": {
+    "background": "#FFF",
+    "borderRadius": "0px",
+    "fontWeight": "500",
+    "foreground": "#224",
+    "gutterIcon": true,
+    "hideFromStatusBar": true,
+    "hideFromTree": false,
+    "icon": "alert",
+    "iconColour": "#37B",
+    "opacity": 50,
+    // "rulerOpacity": 100,
+    // "rulerColour": "#FFF",
+    "rulerLane": "none",
+    "type": "line"
+  },
+  "todo-tree.highlights.enabled": true,
+  "todo-tree.highlights.highlightDelay": 100,
+  "todo-tree.highlights.useColourScheme": true,
+  "todo-tree.regex.enableMultiLine": false, // new items
+  // "todo-tree.regex.subTagRegex": "^:\\s*",
+  "todo-tree.regex.regex": "((//|#|<!--|;|/\\*|^)\\s*($TAGS)|^\\s*- \\[ \\])",
+  // "todo-tree.regex.regexCaseSensitive": true, // "todo-tree.regex.regex": "^\\s*(TASK LIST:)\\s*\\[(.+?)\\]\\s*"
+  "todo-tree.regex.subTagRegex": "^\\s*\\((.*)\\)", //"^\\s*\\[(.*)\\]",
+  //\\[(TODO|priority):\\s*(.+?)\\]",
+  // "todo-tree.regex.subTagRegex": "\\[(.+?)\\]",
+  // "todo-tree.regex.subTagRegex": "^\\s*\\[(TODO|priority):\\s*(.+?)\\]\\s*", // "^\\s*\\((.*)\\)",
+  // "todo-tree.ripgrep.ripgrep": "",
+  "todo-tree.ripgrep.ripgrepArgs": "--max-columns=1000 --no-config ",
+  "todo-tree.ripgrep.ripgrepMaxBuffer": 200,
+  "todo-tree.ripgrep.usePatternFile": true,
+  "todo-tree.tree.autoRefresh": true,
+  "todo-tree.tree.buttons.expand": true,
+  "todo-tree.tree.buttons.export": false,
+  "todo-tree.tree.buttons.filter": true,
+  "todo-tree.tree.buttons.groupBySubTag": false, // new items
+  "todo-tree.tree.buttons.groupByTag": true,
+  "todo-tree.tree.buttons.refresh": true,
+  "todo-tree.tree.buttons.reveal": true,
+  "todo-tree.tree.buttons.scanMode": false,
+  "todo-tree.tree.buttons.viewStyle": true,
+  "todo-tree.tree.disableCompactFolders": false,
+  "todo-tree.tree.expanded": true,
+  "todo-tree.tree.filterCaseSensitive": false,
+  "todo-tree.tree.flat": false,
+  "todo-tree.tree.groupedBySubTag": false, // new items
+  "todo-tree.tree.groupedByTag": false, // new items
+  "todo-tree.tree.hideIconsWhenGroupedByTag": false,
+  "todo-tree.tree.hideTreeWhenEmpty": false,
+  "todo-tree.tree.labelFormat": "${tag} ${after} ― Line ${line}",
+  "todo-tree.tree.scanAtStartup": true,
+  "todo-tree.tree.scanMode": "workspace only",
+  "todo-tree.tree.showBadges": true,
+  "todo-tree.tree.showCountsInTree": true,
+  "todo-tree.tree.showCurrentScanMode": true,
+  "todo-tree.tree.sort": true,
+  "todo-tree.tree.sortTagsOnlyViewAlphabetically": false,
+  "todo-tree.tree.subTagClickUrl": "", // new items
+  "todo-tree.tree.tagsOnly": true,
+  "todo-tree.tree.tooltipFormat": "${filepath}, line ${line}",
+  "todo-tree.tree.trackFile": true,
+  // "todo-tree.filtering.excludedWorkspaces": [], // new items
+  // "todo-tree.filtering.ignoreGitSubmodules": false,
+  // "todo-tree.filtering.includedWorkspaces": [], // new items
+  // "todo-tree.filtering.includeGlobs": [], // new items
+  // "todo-tree.filtering.includeHiddenFiles": false,
+  // "todo-tree.filtering.passGlobsToRipgrep": true,
+  // "todo-tree.filtering.scopes": [], // new items
+  // "todo-tree.filtering.useBuiltInExcludes": "file and search excludes",
+  // "todo-tree.general.debug": false,
+  // "todo-tree.general.enableFileWatcher": true,
+  // "todo-tree.general.exportPath": "~/todo-tree-%Y%m%d-%H%M.txt",
+  // "todo-tree.general.fileWatcherGlob": "**/*",
+  // "todo-tree.general.revealBehaviour": "end of todo",
+  // "todo-tree.general.rootFolder": "",
+  // "todo-tree.general.showActivityBarBadge": false, // new items
+  // "todo-tree.general.showIconsInsteadOfTagsInStatusBar": false, // new items
+  // "todo-tree.general.statusBar": "current file",
+  // "todo-tree.general.statusBarClickBehaviour": "cycle",
+  // "todo-tree.general.tagGroups": {}, // new items
+  // "todo-tree.highlights.enabled": true,
+  // "todo-tree.highlights.highlightDelay": 100,
+  // "todo-tree.highlights.useColourScheme": true,
+  // "todo-tree.regex.enableMultiLine": false, // new items
+  // "todo-tree.regex.regex": "((//|#|<!--|;|/\\*|^)\\s*($TAGS)|^\\s*- \\[ \\])",
+  // "todo-tree.regex.regexCaseSensitive": true,
+  // "todo-tree.regex.subTagRegex": "^\\s*\\((.*)\\)",
+  // "todo-tree.ripgrep.ripgrep": "",
+  // "todo-tree.ripgrep.ripgrepArgs": "--max-columns=1000 --no-config ",
+  // "todo-tree.ripgrep.ripgrepMaxBuffer": 200,
+  // "todo-tree.ripgrep.usePatternFile": true,
+  // "todo-tree.tree.autoRefresh": true,
+  // "todo-tree.tree.buttons.expand": true,
+  // "todo-tree.tree.buttons.export": false,
+  // "todo-tree.tree.buttons.filter": true,
+  // "todo-tree.tree.buttons.groupBySubTag": false, // new items
+  // "todo-tree.tree.buttons.groupByTag": true,
+  // "todo-tree.tree.buttons.refresh": true,
+  // "todo-tree.tree.buttons.reveal": true,
+  // "todo-tree.tree.buttons.scanMode": false,
+  // "todo-tree.tree.buttons.viewStyle": true,
+  // "todo-tree.tree.disableCompactFolders": false,
+  // "todo-tree.tree.expanded": true,
+  // "todo-tree.tree.filterCaseSensitive": false,
+  // "todo-tree.tree.flat": false,
+  // "todo-tree.tree.groupedBySubTag": false, // new items
+  // "todo-tree.tree.groupedByTag": false, // new items
+  // "todo-tree.tree.hideIconsWhenGroupedByTag": false,
+  // "todo-tree.tree.hideTreeWhenEmpty": false,
+  // "todo-tree.tree.labelFormat": "${tag} ${after} ― Line ${line}",
+  // "todo-tree.tree.scanAtStartup": true,
+  // "todo-tree.tree.scanMode": "workspace",
+  // "todo-tree.tree.showBadges": true,
+  // "todo-tree.tree.showCountsInTree": true,
+  // "todo-tree.tree.showCurrentScanMode": true,
+  // "todo-tree.tree.sort": true,
+  // "todo-tree.tree.sortTagsOnlyViewAlphabetically": false,
+  // "todo-tree.tree.subTagClickUrl": "", // new items
+  // "todo-tree.tree.tagsOnly": true,
+  // "todo-tree.tree.tooltipFormat": "${filepath}, line ${line}",
+  // #endregion: TODO TREE                                                           !
+  /*
+    |-··----------------------------------------------------------··-|
+  */
+  // #region Copilot Chat Agent                                      !
+  "chat.agent.enabled": true,
+  "chat.agent.maxRequests": 15,
+  "chat.commandCenter.enabled": true,
+  "chat.detectParticipant.enabled": true,
+  "chat.editing.autoAcceptDelay": 20,
+  "chat.editor.fontFamily": "Consolas, 'Courier New', monospace",
+  "chat.editor.fontSize": 14,
+  "chat.editor.fontWeight": "normal",
+  "chat.editor.wordWrap": "on",
+  "chat.edits2.enabled": true,
+  "chat.editRequests": "inline",
+  "chat.extensionTools.enabled": true,
+  "chat.math.enabled": true,
+  "chat.notifyWindowOnConfirmation": true,
+  "chat.tools.useTreePicker": true,
+  // Whether to enable next edit suggestions (NES).
+  // NES can propose a next edit based on your recent changes. [Learn more](https://code.visualstudio.com/docs/copilot/ai-powered-suggestions#_next-edit-suggestions) about next edit suggestions.
+  "github.copilot.nextEditSuggestions.enabled": true,
+  // Whether to offer fixes for diagnostics via next edit suggestions (NES).
+  "github.copilot.nextEditSuggestions.fixes": true,
+  // Enable or disable auto triggering of Copilot completions for specified languages. You can still trigger suggestions manually using Alt + \
+  "github.copilot.enable": {
+    "*": true
+  },
+  // Enable reusable prompt (*.prompt.md) and instruction files (*.instructions.md) in Chat sessions.
+  "chat.promptFiles": true,
+  // When enabled, custom instructions and mode instructions will be appended to the system message instead of a user message.
+  "github.copilot.chat.customInstructionsInSystemMessage": true,
+  // Controls whether code instructions from .github/copilot-instructions.md are added to Copilot requests.
+  "github.copilot.chat.codeGeneration.useInstructionFiles": true,
+  // Note: Keep your instructions short and precise. Poor instructions can degrade Copilot's quality and performance. [Learn more](https://code.visualstudio.com/docs/copilot/copilot-customization) about customizing Copilot.
+
+  // Mode File Locations
+  // Specify location(s) of custom chat mode files (*.chatmode.md). [Learn More](https://code.visualstudio.com/docs/copilot/chat/chat-modes).
+  // Relative paths are resolved from the root folder(s) of your workspace.
+  "chat.modeFilesLocations": {
+    "memory-bank/chatmodes": true
+  },
+  // Prompt File Locations
+  // Specify location(s) of reusable prompt files (*.prompt.md) that can be run in Chat sessions. [Learn More](https://code.visualstudio.com/docs/copilot/copilot-customization#_prompt-files-experimental).
+  // Relative paths are resolved from the root folder(s) of your workspace.
+  "chat.promptFilesLocations": {
+    "memory-bank/prompts": true
+  },
+  // Instructions File Locations
+  // Specify location(s) of instructions files (*.instructions.md) that can be attached in Chat sessions. [Learn More](https://code.visualstudio.com/docs/copilot/copilot-customization#_custom-instructions).
+  // Relative paths are resolved from the root folder(s) of your workspace.
+  "chat.instructionsFilesLocations": {
+    "memory-bank/instructions": true
+  },
+
+  "chat.implicitContext.enabled": {
+    "panel": "always"
+  },
+  "chat.mcp.enabled": true,
+  "chat.sendElementsToChat.enabled": true,
+  // #endregion: Copilot Chat Agent                                  !
+  /*
+    |-··----------------------------------------------------------··-|
+  */
+  // #region Github Copilot                                          !
+  "github.copilot.chat.agent.autoFix": true,
+  "github.copilot.chat.agent.currentEditorContext.enabled": true,
+  "github.copilot.chat.agent.runTasks": true,
+  "github.copilot.chat.agent.thinkingTool": true,
+  "github.copilot.chat.codesearch.enabled": true,
+  "github.copilot.chat.copilotDebugCommand.enabled": true,
+  "github.copilot.chat.editor.temporalContext.enabled": false,
+  "github.copilot.chat.edits.temporalContext.enabled": true,
+  "github.copilot.chat.generateTests.codeLens": true,
+  "github.copilot.chat.languageContext.fix.typescript.enabled": true,
+  "github.copilot.chat.languageContext.inline.typescript.enabled": true,
+  "github.copilot.chat.languageContext.typescript.enabled": true,
+  "github.copilot.chat.newWorkspaceCreation.enabled": true,
+  "github.copilot.chat.reviewSelection.enabled": true,
+  "github.copilot.chat.scopeSelection": true,
+  "github.copilot.chat.setupTests.enabled": true,
+  "github.copilot.chat.startDebugging.enabled": true,
+  "github.copilot.chat.summarizeAgentConversationHistory.enabled": true,
+  "github.copilot.chat.terminalChatLocation": "terminal",
+  "github.copilot.chat.useProjectTemplates": true,
+  "github.copilot.editor.enableCodeActions": true,
+  "github.copilot.renameSuggestions.triggerAutomatically": true,
+  "github.copilot.selectedCompletionModel": "gpt-4o-copilot",
+  "inlineChat.enableV2": true,
+  "inlineChat.hideOnRequest": false,
+  "inlineChat.lineEmptyHint": true,
+  "inlineChat.lineNaturalLanguageHint": true,
+
+  "github.copilot.chat.commitMessageGeneration.instructions": [
+    {
+      "file": "memory-bank/instructions/conventional-commits-must-be-used.instructions.md"
+    }
+  ],
+  "github.copilot.chat.pullRequestDescriptionGeneration.instructions": [
+    {
+      "text": "Start with a concise summary. List key changes as bullet points. Reference related issues and include breaking changes if any."
+    },
+    {
+      "text": "Include testing instructions and deployment considerations."
+    }
+  ],
+  "github.copilot.chat.reviewSelection.instructions": [
+    {
+      "text": "Check for modularity, proper TypeScript types, comprehensive error handling, and code comments."
+    },
+    {
+      "text": "Verify compliance with project coding standards and memory bank guidelines."
+    },
+    {
+      "text": "Ensure no direct mutations of shared state and proper dependency management."
+    }
+  ],
+
+  // #endregion: Github Copilot                                      !
+  /*
+    |-··----------------------------------------------------------··-|
+  */
+  // #region Last Section                                            !
+  "typescript.tsserver.maxTsServerMemory": 8192,
+  "terminal.integrated.persistentSessionReviveProcess": "never",
+  "terminal.integrated.localEchoLatencyThreshold": 30,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "diffEditor.ignoreTrimWhitespace": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "terminal.integrated.env.linux": {
+    "CODEX_HOME": "${workspaceFolder}/.codex"
+  },
+
+  // ========================================
+  // Task and Launch Configuration
+  // ========================================
+
+  "debug.allowBreakpointsEverywhere": true,
+  "debug.showBreakpointsInOverviewRuler": true,
+  "debug.console.fontSize": 14,
+  "debug.console.fontFamily": "Consolas, 'Courier New', monospace",
+
+  // ========================================
+  // Quick Actions and Shortcuts
+  // ========================================
+  "workbench.action.quickOpen.triggerMode": "openEditors",
+  "workbench.quickOpen.preserveInput": true,
+  "workbench.commandPalette.preserveInput": true,
+
+  // ========================================
+  // View Header Icons Configuration
+  // ========================================
+
+  // Always show icons in view headers
+  "workbench.tree.renderIndentGuides": "always",
+  "workbench.tree.indent": 12,
+  "workbench.list.openMode": "singleClick",
+
+  // Explorer view header icons
+  "explorer.compactFolders": false,
+  "explorer.decorations.badges": true,
+  "explorer.decorations.colors": true,
+  "explorer.sortOrder": "type",
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": true,
+  "explorer.fileNesting.patterns": {
+    "*.ts": "${capture}.js",
+    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+    "*.jsx": "${capture}.js",
+    "*.tsx": "${capture}.ts",
+    "tsconfig.json": "tsconfig.*.json",
+    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, .npmrc"
+  },
+
+  // Outline view header icons
+  "outline.icons": true,
+  "outline.problems.enabled": true,
+  "outline.problems.badges": true,
+  "outline.problems.colors": true,
+  "outline.showFiles": true,
+  "outline.showModules": true,
+  "outline.showPackages": true,
+  "outline.showClasses": true,
+  "outline.showMethods": true,
+  "outline.showProperties": true,
+  "outline.showFields": true,
+  "outline.showConstructors": true,
+  "outline.showEnums": true,
+  "outline.showInterfaces": true,
+  "outline.showFunctions": true,
+  "outline.showVariables": true,
+  "outline.showConstants": true,
+  "outline.showStrings": true,
+  "outline.showNumbers": true,
+  "outline.showBooleans": true,
+  "outline.showArrays": true,
+  "outline.showObjects": true,
+  "outline.showKeys": true,
+  "outline.showNull": true,
+  "outline.showEnumMembers": true,
+  "outline.showStructs": true,
+  "outline.showEvents": true,
+  "outline.showOperators": true,
+  "outline.showTypeParameters": true,
+
+  // Extensions view header icons
+  "extensions.ignoreRecommendations": false,
+
+  // Search view header icons
+  "search.showLineNumbers": true,
+  "search.smartCase": true,
+  "search.useGlobalIgnoreFiles": true,
+  "search.useIgnoreFiles": true,
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/.git": true,
+    "**/.DS_Store": true,
+    "**/tmp": true,
+    "**/coverage": true,
+    "**/dist": true,
+    "**/build": true,
+    "**/.vscode": true,
+    "**/.next": true,
+    "**/out": true
+  },
+
+  // Git/SCM view header icons
+  "scm.alwaysShowRepositories": true,
+  "scm.autoReveal": true,
+  "scm.defaultViewMode": "tree",
+  "scm.repositories.visible": 10,
+
+  // Problems view header icons
+  "problems.showCurrentInStatus": true,
+  "problems.sortOrder": "severity",
+  "problems.decorations.enabled": true,
+
+  // Debug view header icons
+  "debug.showInStatusBar": "always",
+  "debug.showSubSessionsInToolBar": true,
+
+  // Terminal view header icons
+  "terminal.integrated.showExitAlert": false,
+  "terminal.integrated.tabs.enabled": true,
+  "terminal.integrated.tabs.location": "left",
+  "terminal.integrated.tabs.showActions": "always",
+  "terminal.integrated.tabs.showActiveTerminal": "always",
+
+  // Test view header icons (if you have test extensions)
+  "testing.automaticallyOpenPeekView": "never",
+  "testing.showAllMessages": true,
+
+  // Workbench activity bar and side bar icons
+  "workbench.activityBar.location": "default",
+  "workbench.sideBar.location": "left",
+  "workbench.panel.defaultLocation": "bottom",
+
+  // Icon theme configuration (based on your Material Icon Theme)
+  "material-icon-theme.folders.theme": "specific",
+  "material-icon-theme.folders.color": "#90a4ae",
+  "material-icon-theme.hidesExplorerArrows": false,
+  "material-icon-theme.opacity": 1,
+  "material-icon-theme.saturation": 1,
+
+  // Breadcrumb icons
+  "breadcrumbs.enabled": true,
+  "breadcrumbs.icons": true,
+  "breadcrumbs.showFiles": true,
+  "breadcrumbs.showKeys": true,
+  "breadcrumbs.showProperties": true,
+  "breadcrumbs.showClasses": true,
+  "breadcrumbs.showMethods": true,
+  "breadcrumbs.showFunctions": true,
+  "breadcrumbs.showVariables": true,
+  "breadcrumbs.showConstants": true,
+  "breadcrumbs.showEnums": true,
+  "breadcrumbs.showEnumMembers": true,
+  "breadcrumbs.showInterfaces": true,
+  "breadcrumbs.showModules": true,
+  "breadcrumbs.showPackages": true,
+  "breadcrumbs.showStructs": true,
+  "breadcrumbs.showEvents": true,
+  "breadcrumbs.showOperators": true,
+  "breadcrumbs.showTypeParameters": true,
+  "breadcrumbs.showConstructors": true,
+  "breadcrumbs.showBooleans": true,
+  "breadcrumbs.showArrays": true,
+  "breadcrumbs.showObjects": true,
+  "breadcrumbs.showNull": true,
+  "breadcrumbs.showNumbers": true,
+  "breadcrumbs.showStrings": true,
+
+  // Editor tab icons
+  "workbench.editor.showTabs": "multiple",
+  "workbench.editor.tabSizing": "shrink",
+  "workbench.editor.wrapTabs": true,
+  "workbench.editor.decorations.badges": true,
+  "workbench.editor.decorations.colors": true,
+  "workbench.editor.labelFormat": "default",
+  "workbench.editor.showIcons": true,
+
+  // Status bar icons
+  "workbench.statusBar.visible": true,
+
+  // Additional visual enhancements
+  "workbench.tips.enabled": true,
+  "workbench.hover.delay": 500,
+  "workbench.reduceMotion": "off",
+  "workbench.tree.expandMode": "singleClick",
+  "workbench.list.defaultFindMode": "highlight",
+  "workbench.list.typeNavigationMode": "automatic",
+  "workbench.list.multiSelectModifier": "ctrlCmd",
+  "workbench.list.smoothScrolling": true,
+  "editor.inlineSuggest.edits.renderSideBySide": "never",
+  "npm.packageManager": "pnpm",
+  "npm.scriptRunner": "pnpm",
+  "prisma.scriptRunner": "pnpm",
+  "genaiscript.cli.packageManager": "pnpm"
+  // #endregion: Last Section                                        !
+}
