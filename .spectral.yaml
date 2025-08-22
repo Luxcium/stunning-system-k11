@@ -1,0 +1,59 @@
+extends:
+  - "spectral:oas"
+rules:
+  operation-tags:
+    description: "Operations must be tagged"
+    given: "$.paths[*][get,put,post,delete,patch,trace,options,head]"
+    then:
+      field: "tags"
+      function: truthy
+  operation-2xx-response:
+    description: "Each operation must define at least one 2xx response"
+    given: "$.paths[*][get,put,post,delete,patch,trace,options,head]"
+    then:
+      function: schema
+      functionOptions:
+        schema:
+          type: object
+          required:
+            - responses
+          properties:
+            responses:
+              type: object
+              patternProperties:
+                "^(2|3)\d{2}$":
+                  type: object
+  operation-operationId-unique:
+    description: "operationId must be unique when present"
+    given: "$.paths[*][get,put,post,delete,patch,trace,options,head].operationId"
+    then:
+      function: xor
+      functionOptions:
+        properties: []
+  info-description:
+    description: "info.description should be at least 20 characters"
+    given: "$.info.description"
+    then:
+      function: length
+      functionOptions:
+        min: 20
+  no-empty-servers:
+    description: "servers must not be empty"
+    given: "$.servers"
+    then:
+      function: length
+      functionOptions:
+        min: 1
+  rate-limit-headers-present:
+    description: "Recommend exposing rate-limit headers on responses"
+    severity: hint
+    given: "$.paths[*][get,put,post,delete,patch,trace,options,head].responses[*].headers"
+    then:
+      function: schema
+      functionOptions:
+        schema:
+          type: object
+          properties:
+            X-RateLimit-Remaining: {}
+            X-RateLimit-Reset: {}
+          additionalProperties: true
