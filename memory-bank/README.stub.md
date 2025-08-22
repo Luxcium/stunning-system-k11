@@ -1,4 +1,4 @@
-# <Directory Name>
+# Directory Name
 
 ## Overview
 
