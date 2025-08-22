@@ -26,7 +26,15 @@ interface AppConfig {
 }
 
 const config: AppConfig = {
-  port: parseInt(process.env['PORT'] ?? '3000', 10),
+// Parse and validate port
+const rawPort = process.env['PORT'] ?? '3000';
+const parsedPort = parseInt(rawPort, 10);
+if (isNaN(parsedPort) || parsedPort < 1 || parsedPort > 65535) {
+  throw new Error(`Invalid PORT environment variable: "${rawPort}". Must be an integer between 1 and 65535.`);
+}
+
+const config: AppConfig = {
+  port: parsedPort,
   nodeEnv: process.env['NODE_ENV'] ?? 'development',
   corsOrigin: process.env['CORS_ORIGIN']?.split(',') ?? ['http://localhost:3000'],
   logLevel: process.env['LOG_LEVEL'] ?? 'combined',
