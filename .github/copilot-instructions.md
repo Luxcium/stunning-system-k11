@@ -16,7 +16,20 @@ Always reference these instructions first and fallback to search or bash command
   - Workspace loads in **under 0.01 seconds** - no timeout needed
 - **Validate memory bank structure**:
   - `find memory-bank/ -name "*.md" | wc -l` -- should return 13 files. NEVER CANCEL. Takes under 0.01 seconds.
+- **Validate memory bank structure**:
+
+  > **Note:** The following commands are for Unix-like shells (Linux, macOS, WSL, or Git Bash on Windows). For Windows users using PowerShell, see the alternative commands below.
+
+  - `find memory-bank/ -name "*.md" | wc -l` -- should return 13 files. NEVER CANCEL. Takes under 0.01 seconds.
+    - **PowerShell alternative:**  
+      ```powershell
+      (Get-ChildItem -Recurse -Filter *.md -Path memory-bank | Measure-Object).Count
+      ```
   - `grep -r "description:" memory-bank/ | wc -l` -- should return 12 files with frontmatter. Takes under 0.01 seconds.
+    - **PowerShell alternative:**  
+      ```powershell
+      Select-String -Path (Get-ChildItem -Recurse -Filter *.md -Path memory-bank).FullName -Pattern "description:" | Measure-Object | % Count
+      ```
 - **Test file associations**:
   - VS Code should recognize `.instructions.md`, `.chatmode.md`, and `.prompt.md` files with custom syntax highlighting
   - Check VS Code status bar shows correct file type for these extensions
