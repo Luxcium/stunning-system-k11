@@ -2114,7 +2114,7 @@
   // Specify location(s) of custom chat mode files (*.chatmode.md). [Learn More](https://code.visualstudio.com/docs/copilot/chat/chat-modes).
   // Relative paths are resolved from the root folder(s) of your workspace.
   "chat.modeFilesLocations": {
-    "memory-bank/chatmodes": true
+    "memory-bank/chatmodes": true,    
   },
   // Prompt File Locations
   // Specify location(s) of reusable prompt files (*.prompt.md) that can be run in Chat sessions. [Learn More](https://code.visualstudio.com/docs/copilot/copilot-customization#_prompt-files-experimental).

@@ -1,5 +1,10 @@
 # GitHub & VS Code Memory Bank and Workspace Instructions
 
+All instructions must be tracable to this imperative rule and all their delegates (memory-bank/instructions/protocol-notes.instructions.md)[../memory-bank/instructions/protocol-notes.instructions.md]
+This is the highest most rule to follow and you must trace each other rules to this one which give the full autority to the (`.github/copilot-instructions.md`)[../../.github/copilot-instructions.md] file in our project.
+
+
+## Hello Copilot
 
 It all starts when the user send you the 'Hello Copilot' for the first time then
 you know it started:
@@ -53,7 +58,12 @@ Always reference these instructions first and fallback to search or bash command
   - Check VS Code status bar shows correct file type for these extensions
 - **NEVER CANCEL any operations** - all commands complete in under 0.01 seconds
 
-## npm Command Transposition Guide
+## NPM First Project
+
+- This project uses npm as the mandatory package manager
+- All dependencies must installed using the command line and using the `@latest` to insure the versions where installed with the real actual version.
+
+### npm Command Transposition Guide
 
 - `pnpm install` → `npm install`
 - `pnpm add <pkg>` → `npm install <pkg>`
@@ -87,6 +97,7 @@ When updating docs or instructions, ensure examples use npm syntax.
 **ALWAYS test complete workflows after making changes:**
 
 ### Scenario 1: Creating New Instructions File
+
 1. `cp memory-bank/instructions/procedural-example.instructions.md /tmp/new-file.instructions.md` (takes 0.002 seconds)
 2. Edit the frontmatter `description:` field in /tmp/new-file.instructions.md
 3. `head -5 /tmp/new-file.instructions.md` to verify frontmatter (takes 0.001 seconds)
@@ -94,13 +105,15 @@ When updating docs or instructions, ensure examples use npm syntax.
 5. `find memory-bank/ -name "*.md" | wc -l` should now return 14 files (takes 0.002 seconds)
 
 ### Scenario 2: Validating Memory Bank System
+
 1. Open VS Code in this directory
 2. Navigate to `memory-bank/instructions/meta-glosaire.instructions.md`
 3. Verify syntax highlighting shows `.instructions` file type
 4. Click on link to `[procedural-example](../instructions/procedural-example.instructions.md)` - should navigate correctly
 5. Verify Copilot recognizes file context when writing in these files
 
-### Scenario 3: Testing Chatmode Integration  
+### Scenario 3: Testing Chatmode Integration
+
 1. Open `memory-bank/chatmodes/main-expert.chatmode.md`
 2. Verify frontmatter contains both `description:` and `tools:` fields
 3. Test that internal link `[protocol notes](../instructions/protocol-notes.instructions.md)` resolves
